@@ -1,0 +1,23 @@
+# Starter pipeline
+- task: katalonTask@0
+  inputs:
+    version: '7.9.1'
+    executeArgs: 'katalonc -noSplash -runMode=console -projectPath="C:\Users\HP\git\automation\automation.prj" -retry=0 -testSuitePath="Test Suites/New Test Suite" -executionProfile="default" -browserType="Chrome" -apiKey="38fd3d5c-fcf9-40e9-b364-8b0e0dfb10b4" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
